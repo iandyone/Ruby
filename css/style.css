@@ -21,6 +21,7 @@ nav, footer, header, aside {
 html, body {
   height: 100%;
   width: 100%;
+  min-height: 100vh;
   font-size: 100%;
   line-height: 1;
   font-family: "Poppins";
@@ -75,6 +76,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .burger {
   position: relative;
+  z-index: 100;
   width: 42px;
   cursor: pointer;
   display: -webkit-box;
@@ -152,20 +154,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* --- PATTERNS --- */
-.header__link {
+.header__link, .main__tab {
   color: #030a1b;
   white-space: nowrap;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
-.header__link:hover {
+.header__link:hover, .main__tab:hover {
   color: #fe753f;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
-.header__link-button a {
+.header__link-button, .main__button,
+.header__link-button a,
+.main__button a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -185,7 +189,16 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.3s ease;
 }
 
-.header__link-button a:hover {
+.header__link-button span, .main__button span,
+.header__link-button a span,
+.main__button a span {
+  padding-left: 22px;
+  background: url("../img/main/search.svg") left no-repeat;
+}
+
+.header__link-button:hover, .main__button:hover,
+.header__link-button a:hover,
+.main__button a:hover {
   cursor: pointer;
   color: #ffffff;
   background-color: #fe753f;
@@ -193,13 +206,22 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.3s ease;
 }
 
-/* ================ */
-/* --- COMMON BLOCKS --- */
-.wraper {
-  min-height: 100vh;
-  overflow: hidden;
+.main__title {
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 120%;
+  color: #030a1b;
 }
 
+.main__option {
+  font-size: 16px;
+  line-height: 24px;
+  color: #030a1b;
+  opacity: 0.7;
+}
+
+/* ================ */
+/* --- COMMON BLOCKS --- */
 .container {
   max-width: 1150px;
   margin: 0px auto;
@@ -208,15 +230,23 @@ h1, h2, h3, h4, h5, h6 {
           box-sizing: content-box;
 }
 
+.ruby__content {
+  overflow: hidden;
+}
+
 /* ================================ */
 /* --- HEADER --- */
 .header {
-  padding: 35px 0px;
   position: relative;
+  z-index: 100;
+  padding: 35px 0px;
+  background-color: #fff;
 }
 
 @media (max-width: 992px) {
   .header {
+    position: fixed;
+    width: 100%;
     padding: 5px 0px;
     -webkit-box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
             box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
@@ -263,7 +293,7 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 100;
     padding: 30px;
     left: 0;
-    top: 62px;
+    top: 60px;
     bottom: 0;
     width: 100%;
     max-width: 20rem;
@@ -272,8 +302,9 @@ h1, h2, h3, h4, h5, h6 {
             transform: translateX(-100%);
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
-    -webkit-box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
-            box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14);
+            box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14);
+    border-top: 1px solid gray;
   }
   .header__navigation.active {
     -webkit-transform: translateX(0%);
@@ -313,8 +344,257 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.header__link-button span {
+  background: url("../img/main/search.svg") left no-repeat;
+}
+
 @media (min-width: 992px) {
   .header__burger {
     display: none;
   }
+}
+
+/* --- MAIN --- */
+.main {
+  position: relative;
+  padding: 40px 0 50px;
+}
+
+@media (max-width: 992px) {
+  .main {
+    padding: 100px 0 50px;
+  }
+}
+
+.main__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .main__body {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-column-gap: 0;
+            column-gap: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .main__body {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.main__content {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+  padding-top: 45px;
+}
+
+@media (max-width: 900px) {
+  .main__content {
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main__content {
+    padding: 0;
+  }
+}
+
+.main__title {
+  font-size: 61px;
+  max-width: 560px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 992px) {
+  .main__title {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main__title {
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .main__title {
+    font-size: 40px;
+  }
+}
+
+.main__text {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+  color: #030a1b;
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .main__text {
+    margin-bottom: 20px;
+  }
+}
+
+.main__picture {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+  text-align: right;
+}
+
+.main__picture img {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .main__picture {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+}
+
+.main__search {
+  position: absolute;
+  bottom: 10%;
+  z-index: 10;
+  border-radius: 5px;
+}
+
+@media (max-width: 900px) {
+  .main__search {
+    position: static;
+  }
+}
+
+.main__tabs {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 15px 30px;
+  -webkit-column-gap: 45px;
+          column-gap: 45px;
+  -webkit-box-shadow: 0px -10px 100px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px -10px 100px rgba(0, 0, 0, 0.1);
+  border-radius: 10px 10px 0px 10px;
+}
+
+@media (max-width: 768px) {
+  .main__tabs {
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-radius: 10px 10px 0px 0px;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    background: #ffffff;
+    border: 1px solid #bf3448;
+  }
+}
+
+.main__tab {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  color: #030a1b;
+  opacity: 0.7;
+}
+
+.main__options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 30px 0px;
+  background: #ffffff;
+  -webkit-box-shadow: 0px 10px 100px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 10px 100px rgba(0, 0, 0, 0.1);
+  border-radius: 0px 10px 10px 10px;
+}
+
+@media (max-width: 900px) {
+  .main__options {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+@media (max-width: 768px) {
+  .main__options {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    row-gap: 15px;
+    border-radius: 0px 0px 10px 10px;
+    border: 1px solid #bf3448;
+    border-top: none;
+  }
+}
+
+.main__item {
+  padding: 0px 65px;
+}
+
+.main__item:first-child {
+  padding-left: 30px;
+}
+
+.main__item:last-child {
+  padding-right: 30px;
+}
+
+@media (max-width: 900px) {
+  .main__item {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main__item {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    width: 150px;
+  }
+  .main__item, .main__item:first-child, .main__item:last-child {
+    padding: 0;
+  }
+}
+
+.main__option {
+  white-space: nowrap;
+}
+
+.main__list {
+  padding-right: 20px;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 33px;
+  color: #030a1b;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: url("../img/main/arrow.svg") right no-repeat;
 }

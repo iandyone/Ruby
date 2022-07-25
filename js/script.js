@@ -39,3 +39,13 @@ links.forEach((link) => {
         }
     })
 })
+
+/* --- FAKE SUBSCRIBE --- */
+const subForm = document.querySelector(".subscribe__form");
+subForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const response = document.querySelector(".subscribe__input").value;
+    const data = "Fake subscription on email " + response;
+    confirm(data);
+});
+

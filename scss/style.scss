@@ -81,6 +81,9 @@
 
     &__featured {
     }
+
+    &__subscribe {
+    }
 }
 /* ================================ */
 
@@ -299,7 +302,8 @@
         background: #ffffff;
         box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.1);
         border: 1px solid $borderColor;
-        border-radius: 0px 10px 10px 10px;
+        border-top: none;
+        border-radius: -0px 10px 10px 10px;
 
         @media (max-width: 900px) {
             justify-content: space-between;
@@ -663,5 +667,114 @@
 
     &__text {
         @extend %text;
+    }
+}
+
+/* --- SUBSCRIBE --- */
+.subscribe {
+    padding: 70px 0;
+
+    &__body {
+        padding: 70px 20px 70px;
+        background-color: $bgColorForm;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+
+        @media (max-width: 768px) {
+            padding: 40px 20px 40px;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            width: 208px;
+            height: 208px;
+            background-color: #fff;
+            opacity: 0.1;
+        }
+
+        &::before {
+            top: 4%;
+            left: -12%;
+        }
+
+        &::after {
+            right: 2%;
+            bottom: -35%;
+        }
+    }
+
+    &__title {
+        color: #ffffff;
+        font-weight: 500;
+        font-size: 44px;
+        line-height: 137%;
+        margin-bottom: 15px;
+        text-align: center;
+
+        @media (max-width: 992px) {
+            font-size: 40px;
+        }
+    }
+
+    &__subtitle {
+        @extend %text;
+        max-width: 635px;
+        color: #ffffff;
+        text-align: center;
+        margin-bottom: 70px;
+
+        @media (max-width: 480px) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__form {
+        width: 100%;
+        max-width: 745px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        position: relative;
+
+        @media (max-width: 768px) {
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px 10px 0px 0px;
+        }
+    }
+
+    &__input {
+        border-radius: 10px;
+        width: 100%;
+        height: 70px;
+        padding: 0 30px;
+        font-weight: 14;
+        font-size: 16px;
+        line-height: calc(24 / 16 * 100%);
+        background-color: #fff;
+        
+        @media (max-width: 768px) {
+            padding: 0 20px;
+            border-radius: 10px 10px 0px 0px ;
+        }
+    }
+
+    &__button {
+        @extend %button;
+        position: absolute;
+        right: 7px;
+
+        @media (max-width: 768px) {
+            position: static;
+            width: 100%;
+            border-radius: 0px 0px 10px 10px;
+        }
     }
 }

@@ -167,10 +167,11 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.3s ease;
 }
 
-.header__link-button, .main__button, .home__button,
+.header__link-button, .main__button, .home__button, .subscribe__button,
 .header__link-button a,
 .main__button a,
-.home__button a {
+.home__button a,
+.subscribe__button a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -190,18 +191,20 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.3s ease;
 }
 
-.header__link-button span, .main__button span, .home__button span,
+.header__link-button span, .main__button span, .home__button span, .subscribe__button span,
 .header__link-button a span,
 .main__button a span,
-.home__button a span {
+.home__button a span,
+.subscribe__button a span {
   padding-left: 22px;
   background: url("../img/main/search.svg") left no-repeat;
 }
 
-.header__link-button:hover, .main__button:hover, .home__button:hover,
+.header__link-button:hover, .main__button:hover, .home__button:hover, .subscribe__button:hover,
 .header__link-button a:hover,
 .main__button a:hover,
-.home__button a:hover {
+.home__button a:hover,
+.subscribe__button a:hover {
   cursor: pointer;
   color: #ffffff;
   background-color: #fe753f;
@@ -222,7 +225,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.main__option, .main__list > option, .home__location, .featured__subtitle, .property__text {
+.main__option, .main__list > option, .home__location, .featured__subtitle, .property__text, .subscribe__subtitle {
   font-size: 16px;
   line-height: 24px;
   color: #030a1b;
@@ -548,7 +551,8 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.1);
           box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.1);
   border: 1px solid #e9e7e7;
-  border-radius: 0px 10px 10px 10px;
+  border-top: none;
+  border-radius: -0px 10px 10px 10px;
 }
 
 @media (max-width: 900px) {
@@ -1025,4 +1029,140 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 22px;
   line-height: 33px;
   margin-bottom: 10px;
+}
+
+/* --- SUBSCRIBE --- */
+.subscribe {
+  padding: 70px 0;
+}
+
+.subscribe__body {
+  padding: 70px 20px 70px;
+  background-color: #433E89;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .subscribe__body {
+    padding: 40px 20px 40px;
+  }
+}
+
+.subscribe__body::before, .subscribe__body::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  width: 208px;
+  height: 208px;
+  background-color: #fff;
+  opacity: 0.1;
+}
+
+.subscribe__body::before {
+  top: 4%;
+  left: -12%;
+}
+
+.subscribe__body::after {
+  right: 2%;
+  bottom: -35%;
+}
+
+.subscribe__title {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 44px;
+  line-height: 137%;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+@media (max-width: 992px) {
+  .subscribe__title {
+    font-size: 40px;
+  }
+}
+
+.subscribe__subtitle {
+  max-width: 635px;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+@media (max-width: 480px) {
+  .subscribe__subtitle {
+    margin-bottom: 30px;
+  }
+}
+
+.subscribe__form {
+  width: 100%;
+  max-width: 745px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 10px;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .subscribe__form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    border-radius: 10px 10px 0px 0px;
+  }
+}
+
+.subscribe__input {
+  border-radius: 10px;
+  width: 100%;
+  height: 70px;
+  padding: 0 30px;
+  font-weight: 14;
+  font-size: 16px;
+  line-height: calc(24 / 16 * 100%);
+  background-color: #fff;
+}
+
+@media (max-width: 768px) {
+  .subscribe__input {
+    padding: 0 20px;
+    border-radius: 10px 10px 0px 0px;
+  }
+}
+
+.subscribe__button {
+  position: absolute;
+  right: 7px;
+}
+
+@media (max-width: 768px) {
+  .subscribe__button {
+    position: static;
+    width: 100%;
+    border-radius: 0px 0px 10px 10px;
+  }
 }

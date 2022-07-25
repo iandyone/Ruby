@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>Ruby Home</title>
-    <script src="https://kit.fontawesome.com/73bf9866ff.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
     <header class="header">
         <div class="header__container container">
@@ -47,7 +45,7 @@
                         </div>
                         <div class="main__search">
                             <ul class="main__tabs">
-                                <li class="main__tab"><a href="#">Buy</a></li>
+                                <li class="main__tab active"><a href="#">Buy</a></li>
                                 <li class="main__tab"><a href="#">Rent</a></li>
                                 <li class="main__tab"><a href="#">Sell</a></li>
                             </ul>
@@ -61,7 +59,7 @@
                                     </select>
                                 </div>
                                 <div class="main__item">
-                                    <h4 class="main__option">Property type</h4>
+                                    <h4 class="main__option">featured type</h4>
                                     <select class="main__list" name="location">
                                         <option value="Dhaka" selected>Duplex</option>
                                         <option value="Dhaka">Duplex</option>
@@ -239,12 +237,80 @@
                     </div>
                 </div>
             </section>
+            <section class="ruby__featured featured">
+                <div class="featured__container container">
+                    <h2 class="featured__title">Property Featured</h2>
+                    <p class="featured__subtitle">Real estate is a crowded field. But with the number of buyers
+                        purchasing homes through real estate agents and brokers growing there’s plenty of </p>
+                    <div class="featured__body">
+                        <div class="featured__properties">
+                            <div class="featured__property property">
+                                <div class="property__icon">
+                                    <img src="img/featured/01.svg" alt="property-icon">
+                                </div>
+                                <h4 class="property__title">100% Security</h4>
+                                <p class="property__text">For many of us, buying a home is a dre and one not easily
+                                    attainable</p>
+                            </div>
+                            <div class="featured__property property" data-aos="fade-right">
+                                <div class="property__icon">
+                                    <img src="img/featured/02.svg" alt="property-icon">
+                                </div>
+                                <h4 class="property__title">Free aid conditioner</h4>
+                                <p class="property__text">For many of us, buying a home is a dre and one not easily
+                                    attainable</p>
+                            </div>
+                            <div class="featured__property property" data-aos="fade-up-right">
+                                <div class="property__icon">
+                                    <img src="img/featured/03.svg" alt="property-icon">
+                                </div>
+                                <h4 class="property__title">Flower gaeden</h4>
+                                <p class="property__text">For many of us, buying a home is a dre and one not easily
+                                    attainable</p>
+                            </div>
+                        </div>
+                        <div class="featured__properties featured__properties-img" data-aos="fade-up">
+                            <img src="img/featured/bg.png" alt="">
+                        </div>
+                        <div class="featured__properties">
+                            <div class="featured__property property">
+                                <div class="property__icon">
+                                    <img src="img/featured/04.svg" alt="property-icon">
+                                </div>
+                                <h4 class="property__title">Parkers & novers</h4>
+                                <p class="property__text">For many of us, buying a home is a dre and one not easily
+                                    attainable</p>
+                            </div>
+                            <div class="featured__property property" data-aos="fade-left">
+                                <div class="property__icon">
+                                    <img src="img/featured/05.svg" alt="property-icon">
+                                </div>
+                                <h4 class="property__title">Rental furniture</h4>
+                                <p class="property__text">For many of us, buying a home is a dre and one not easily
+                                    attainable</p>
+                            </div>
+                            <div class="featured__property property" data-aos="fade-up-left">
+                                <div class="property__icon">
+                                    <img src="img/featured/06.svg" alt="property-icon">
+                                </div>
+                                <h4 class="property__title">Swimming pool</h4>
+                                <p class="property__text">For many of us, buying a home is a dre and one not easily
+                                    attainable</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </article>
     </main>
     <footer class="footer"></footer>
-    <script src="js/script.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/73bf9866ff.js" crossorigin="anonymous"></script>
+    <script src="js/animations.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/sliders.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

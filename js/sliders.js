@@ -17,10 +17,30 @@ $(document).ready(function () {
             {
                 breakpoint: 550,
                 settings: {
-                    slidesToShow: 1,
-
+                    slidesToShow: 1
                 }
             }
+        ]
+    });
+});
+
+
+$(document).ready(function () {
+    $('.feedback__slider').slick({
+        arrows: false,
+        dots: true,
+        slidesToShow: 2,
+        autoplay: true,
+        speed: 1000,
+        autoplaySpeed: 5000,
+        infinity: true,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1
+                }
+            },
         ]
     });
 });

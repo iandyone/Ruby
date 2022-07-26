@@ -185,6 +185,9 @@
     @media (max-width: 992px) {
         padding: 100px 0 50px;
     }
+    @media (max-width: 768px) {
+        padding-bottom: 40px;
+    }
 
     &__body {
         display: flex;
@@ -201,9 +204,12 @@
     &__content {
         flex: 0 1 50%;
         padding-top: 45px;
-
+        
+        @media (max-width: 1100px) {
+            padding-top: 0;
+        }
         @media (max-width: 900px) {
-            padding-right: 10px;
+            padding: 45px 10px 0 0;
         }
         @media (max-width: 768px) {
             padding: 0;
@@ -267,8 +273,24 @@
         padding: 15px 30px;
         column-gap: 45px;
         border: 1px solid $borderColor;
-        border-bottom: none;
+        /* border-bottom: none; */
         border-radius: 10px 10px 0px 0px;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            height: 10px;
+            background-color: #fff;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            transform: translateY(50%);
+            
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
 
         @media (max-width: 768px) {
             width: 100%;
@@ -302,7 +324,7 @@
         background: #ffffff;
         box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.1);
         border: 1px solid $borderColor;
-        border-top: none;
+        /*   */
         border-radius: -0px 10px 10px 10px;
 
         @media (max-width: 900px) {
@@ -320,11 +342,30 @@
 
     &__item {
         padding: 0px 65px;
+        position: relative;
+
         &:first-child {
             padding-left: 30px;
         }
         &:last-child {
             padding-right: 30px;
+        }
+        &:not(:last-child)::before {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translate(50%, -50%);
+            width: 1px;
+            height: 34px;
+            background-color: $textColor;
+            opacity: .1;
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+
+
         }
         @media (max-width: 900px) {
             padding: 0 40px;
@@ -369,10 +410,10 @@
 
 /* --- PARTNERS --- */
 .partners {
-    padding: 50px 0 70px 0;
+    padding: 50px 0px;
 
     @media (max-width: 768px) {
-        padding: 50px 0;
+        padding: 40px 0px;
     }
 
     &__title {
@@ -413,6 +454,10 @@
 .catalog {
     padding: 40px 0 100px 0;
 
+    @media (max-width: 768px) {
+        padding: 40px 0px 50px 0px;
+    }
+
     &__title {
         @extend %title;
         margin-bottom: 70px;
@@ -450,6 +495,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-top: 20px;
     }
 
     & .slick-dots li {
@@ -577,8 +623,12 @@
 
 /* --- FEATURED --- */
 .featured {
-    padding: 70px 0;
+    padding: 70px 0px;
     background: $bgColor;
+
+    @media (max-width: 768px) {
+        padding: 40px 0px;
+    }
 
     &__title {
         @extend %title;
@@ -593,6 +643,10 @@
         max-width: 730px;
         margin: 0 auto;
         margin-bottom: 70px;
+
+        @media (max-width: 768px) {
+            margin-bottom: 40px;
+        }
     }
 
     &__body {
@@ -673,6 +727,10 @@
 /* --- SUBSCRIBE --- */
 .subscribe {
     padding: 70px 0;
+    
+    @media (max-width: 768px) {
+        padding: 40px 0;
+    }
 
     &__body {
         padding: 70px 20px 70px;
@@ -763,6 +821,7 @@
         @media (max-width: 768px) {
             padding: 0 20px;
             border-radius: 10px 10px 0px 0px ;
+            height: 55px;
         }
     }
 

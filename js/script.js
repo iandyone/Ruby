@@ -18,15 +18,15 @@ document.documentElement.addEventListener("click", function (e) {
 
 
 /* --- TABS CLICK --- */
-const tabs = document.querySelector(".main__tabs");
-tabs.addEventListener("click", function (e) {
-    e.preventDefault();
-    const tabList = tabs.children;
-    Array.from(tabList).forEach(tab => {
+const tabsContainer = Array.from(document.querySelector(".main__tabs").children);
+const tabs = document.querySelectorAll(".main__tab");
+tabs.forEach(item => item.addEventListener("click", function(e) {
+    tabsContainer.forEach(tab => {
         tab.classList.remove("active");
-    })
-    e.target.closest(".main__tab").classList.add("active");
-})
+    });
+    e.target.closest("LI").classList.add("active");
+    e.preventDefault();
+}))
 
 
 /* --- FAKE ROUTING --- */
@@ -46,6 +46,7 @@ subForm.addEventListener("submit", function (e) {
     e.preventDefault();
     const response = document.querySelector(".subscribe__input").value;
     const data = "Fake subscription on email " + response;
-    confirm(data);
+    if (response) {
+        confirm(data);
+    } 
 });
-
